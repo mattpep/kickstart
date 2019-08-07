@@ -11,7 +11,24 @@
       - vim
       - ruby-build
       - aptitude
+
+  - name: Xenial specific packages
+    package: name={{ item }}
+    with_items:
       - ruby2.3-dev
+      - redshift
+    when:
+      - ansible_facts['distribution'] == "Ubuntu"
+      - ansible_facts['distribution_major_version'] == "16"
+
+  - name: Bionic specific packages
+    package: name={{ item }}
+    with_items:
+      - ruby2.5-dev
+    when:
+      - ansible_facts['distribution'] == "Ubuntu"
+      - ansible_facts['distribution_major_version'] == "18"
+
 
   - apt_key:
       keyserver: keyserver.ubuntu.com

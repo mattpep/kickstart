@@ -21,3 +21,11 @@
       repo: 'deb http://ppa.launchpad.net/atareao/telegram/ubuntu xenial main'
 
   - package: name=telegram
+
+  - lineinfile:
+      dest: /home/mattp/.bash_profile
+      owner: mattp
+      group: mattp
+      mode: 0640
+      line: 'export EDITOR=vim'
+      create: yes

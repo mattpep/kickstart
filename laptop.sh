@@ -2,5 +2,5 @@
 
 
 sudo apt install ansible
-ansible-playbook -K laptop.yml
+ansible-playbook --ask-become-pass laptop.yml
 

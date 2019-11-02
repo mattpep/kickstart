@@ -55,3 +55,13 @@
     - name: install lastpass firefox plugin
       shell: firefox /tmp/lastpass_password_manager-4.29.0.4-fx.xpi
       when: lastpass_plugin.changed
+
+    - name: download adblock firefox plugin
+      get_url:
+        url: https://addons.mozilla.org/firefox/downloads/file/3371123/adblock_plus-3.6.1-an+fx.xpi
+        dest: /tmp
+      register: adblock_plugin
+
+    - name: install adblock firefox plugin
+      shell: firefox /tmp/adblock_plus-3.6.1-an+fx.xpi
+      when: adblock_plugin.changed

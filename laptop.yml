@@ -53,5 +53,5 @@
       register: lastpass_plugin
 
     - name: install lastpass firefox plugin
-      shell: firefox lastpass_password_manager-4.29.0.4-fx.xpi
+      shell: firefox /tmp/lastpass_password_manager-4.29.0.4-fx.xpi
       when: lastpass_plugin.changed

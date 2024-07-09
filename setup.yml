@@ -2,6 +2,8 @@
 - name: Set up a local machine to my liking
   hosts: 127.0.0.1
   connection: local
+  collections:
+    - ansible.posix
   tasks:
 
     - name: Install some useful packages
@@ -23,10 +25,16 @@
 
     - name: Configure an editor
       ansible.builtin.lineinfile:
-        dest: /home/mattp/.bash_profile
+        dest: /home/mattp/.profile
         mode: "0640"
         line: 'export EDITOR=vim'
         create: true
+
+    - name: Add some SSH keys
+      ansible.posix.authorized_key:
+        user: mattp
+        key: https://github.com/mattpep.keys
+        validate_certs: false
 
     - name: Download lastpass firefox plugin
       ansible.builtin.get_url:

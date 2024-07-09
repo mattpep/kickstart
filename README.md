@@ -5,6 +5,10 @@ This repo is to help me set up a desktop or laptop machine to my liking. It is n
 
 To use this script, use wget/curl/browser to download laptop.sh and laptop.yml, then run `./laptop.sh`
 
+One liner, suitable for copy&paste:
+
+cd /tmp && wget https://raw.githubusercontent.com/mattpep/kickstart/main/setup.sh && wget https://raw.githubusercontent.com/mattpep/kickstart/main/setup.yml && bash ./setup.sh
+
 # Caveats
 
 It's unlikely you'll be able to use this without modification due to the

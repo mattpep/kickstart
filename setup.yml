@@ -45,25 +45,25 @@
     - name: Download lastpass firefox plugin
       ansible.builtin.get_url:
         url: https://addons.mozilla.org/firefox/downloads/file/4246455/lastpass_password_manager-4.127.0.1.xpi
-        dest: /tmp
+        dest: /home/mattp
         mode: "0644"
-        owner: root
-        group: root
+        owner: mattp
+        group: mattp
       register: lastpass_plugin
 
     - name: Install lastpass firefox plugin
-      ansible.builtin.command: firefox /tmp/lastpass_password_manager-4.127.0.1.xpi
+      ansible.builtin.command: firefox /home/mattp/lastpass_password_manager-4.127.0.1.xpi
       when: lastpass_plugin.changed
 
     - name: Download adblock firefox plugin
       ansible.builtin.get_url:
         url: https://addons.mozilla.org/firefox/downloads/file/4312959/adblock_plus-4.3.xpi
-        dest: /tmp
+        dest: /home/mattp
         mode: "0644"
-        owner: root
-        group: root
+        owner: mattp
+        group: mattp
       register: adblock_plugin
 
     - name: Install adblock firefox plugin
-      ansible.builtin.command: firefox /tmp/adblock_plus-4.3.xpi
+      ansible.builtin.command: firefox /home/mattp/adblock_plus-4.3.xpi
       when: adblock_plugin.changed

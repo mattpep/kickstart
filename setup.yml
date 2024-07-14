@@ -57,7 +57,7 @@
 
     - name: Download adblock firefox plugin
       ansible.builtin.get_url:
-        url: https://addons.mozilla.org/firefox/downloads/file/4312959/adblock_plus-4.3.xpi
+        url: https://addons.mozilla.org/firefox/downloads/file/4290466/ublock_origin-1.58.0.xpi
         dest: /home/mattp
         mode: "0644"
         owner: mattp
@@ -65,5 +65,5 @@
       register: adblock_plugin
 
     - name: Install adblock firefox plugin
-      ansible.builtin.command: firefox /home/mattp/adblock_plus-4.3.xpi
+      ansible.builtin.command: firefox /home/mattp/ublock_origin-1.58.0.xpi
       when: adblock_plugin.changed

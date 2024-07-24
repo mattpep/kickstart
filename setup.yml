@@ -22,6 +22,7 @@
         - strace
         - jq
         - firefox
+        - tree
 
     - name: Add common packae signing keys
       ansible.builtin.apt_key:
